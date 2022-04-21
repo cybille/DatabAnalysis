@@ -1,0 +1,66 @@
+#:kivy 2.1
+# KivyMD
+<homepage>
+    name: "home"
+    BoxLayout:
+        MDCard:
+            MDLabel:
+                text: "Housing Analysis"
+                color: "Gray"
+
+        ScrollView:
+
+            MDCarousel:
+                id: roomPic
+                size_hint:(.5,.95)
+                direction: 'left'
+                pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                    AsyncImage:
+                        source: 'FRE_Logo.png'
+                    AsyncImage:
+                        source: 'bg.png'
+                
+
+            GridLayout:
+                BoxLayout: #Top Left Result
+                    orientation:'horizontal'
+                    id: result
+                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                    size_hint: (.16, .296)
+                    pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                    halign: "center"
+                    # spacing: 25
+                    MDCard:
+                        id:room
+                        md_bg_color: [219/255, 219/255, 219/255, 1]
+                        size_hint:(.30, .60)
+                        text: "room"
+                        pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                
+
+
+# BoxLayout: #Top Left Result
+#                     orientation:'horizontal'
+#                     id: result
+#                     # md_bg_color: [219/255, 219/255, 219/255, 1]
+#                     size_hint: (.16, .296)
+#                     pos_hint: {"center_x": 0.1, "center_y": 0.54}
+#                     halign: "center"
+#                     # spacing: 25
+#                     MDCard:
+#                         id:room
+#                         md_bg_color: [219/255, 219/255, 219/255, 1]
+#                         size_hint:(.30, .60)
+#                         text: "room"
+#                         pos_hint: {"center_x": 0.1, "center_y": 0.50}
+
+#                     MDCarousel:
+#                         id: roomPic
+#                         size_hint:(.5,.95)
+#                         direction: 'left'
+#                         pos_hint: {"center_x": 0.1, "center_y": 0.54}
+#                         AsyncImage:
+#                             source: 'FRE_Logo.png'
+#                         AsyncImage:
+#                             source: 'bg.png'
+# """
