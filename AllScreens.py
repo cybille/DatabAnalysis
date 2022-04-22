@@ -6,8 +6,6 @@ from AllButtons import repeated_buttons
 
 
 
-
-
 login = None
 sm= ScreenManager() 
 allScreens= {}

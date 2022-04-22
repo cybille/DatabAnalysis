@@ -9,6 +9,8 @@ from kivy.lang import Builder
 
 class AllTemplates():
     def loadTemplates(self):
-        # Builder.load_file("name.kv")
         Builder.load_file("Homepage.kv")
+        # Builder.load_file("Home.kv")
+        # Builder.load_file("name.kv")
+        
       

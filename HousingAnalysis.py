@@ -14,8 +14,8 @@ AllScreens()
 AllTemplates().loadTemplates()
 
 # load screen manager .kv file
-class Fre_Hotels():
-    pass
+# class HousingAnalysis():
+#     pass
 
 class HousingAnalysisRun(MDApp):
     def build(self):

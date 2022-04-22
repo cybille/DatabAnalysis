@@ -1,6 +1,6 @@
 import kivy
 from kivy.uix.screenmanager import ScreenManager
-import AllScreens
+
 """
 
 CONNECT BACKEND TO FRONT END
