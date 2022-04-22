@@ -3,10 +3,6 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import Screen
 from AllButtons import repeated_buttons
-from AllTextInput import All_Text_Input
-from AllDisplay import Template
-from AllDisplay import AllDisplay
-import apiAccessor
 
 
 
@@ -19,35 +15,12 @@ class AllScreens():
     global sm
     #------- create variable here for screen--------
     def screen(self):
-        signIn= sign_in_screen(name="signIn")
-        signUp= sign_up_screen(name="signUp")
+    
         home = homepage(name="home")
 
-        viewAccount= view_account(name="viewAccount")
-        searchS= search(name="search")
-        myBooking= my_booking(name="myBooking")
-
-        joinLoyalty= join_loyalty(name="joinLoyalty")
-        loyaltyRewards= loyalty_and_rewards(name="loyaltyRewards")
-
-        viewPersonalInfo= view_personalinfo(name="viewPersonalInfo")
-        viewSecurity= view_security(name="viewSecurity")
-        payment= payment_Info(name="payment")
-        viewBooking= view_booking(name = "viewBooking")
      #------- add variable here for screen to load--------
         allScreens= {
-            "signInScreen" : signIn,
-            "signUpScreen" : signUp,
-            "homeScreen" : home,
-            "viewAccountScreen" : viewAccount,
-            "searchScreen" : searchS,
-            "myBookingScreen" : myBooking,
-            "joinLoyaltyScreen" : joinLoyalty,
-            "loyaltyRewardsScreen" : loyaltyRewards,
-            "personalInfoScreen" : viewPersonalInfo,
-            "securityScreen" : viewSecurity,
-            "paymentScreen" : payment,
-            "viewBookingScreen" : viewBooking,
+            "homeScreen" : home
         }
         return allScreens
 
@@ -69,12 +42,13 @@ class AllScreens():
 
 
 class homepage(Screen):
+    # show image
     def on_click(self):
         repeated_buttons().on_click_Search_Button()
-
+    # show image 2
     def on_click2(self):
         repeated_buttons().navigate_to_loyalty()
-
+    # show image 3
     def on_click21(self):
         repeated_buttons().navigate_to_account()
     
@@ -84,6 +58,6 @@ class homepage(Screen):
     def on_click23(self):
         repeated_buttons().navigate_to_Search()
     
-    def process_Input(self):
-        All_Text_Input.user_Input_search(self) 
+    # def process_Input(self):
+    #     All_Text_Input.user_Input_search(self) 
     pass

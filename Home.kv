@@ -1,0 +1,61 @@
+#:kivy 1.0
+
+
+MDScreen:
+
+    md_bg_color: [60/255, 140/255, 255/255, 1]
+<Profile>
+    name: "home3"
+    BoxLayout:
+        orientation: "horizontal"
+        Label:
+            id: blankspace
+            size_hint: .006, .006
+            background_color: .78 , 1.72 , .55 , 1
+        Image:
+            source: "Logo_folder\FRE_Logo.png"
+            size: self.texture_size
+            size_hint: .008, .048
+            pos_hint: {"x":.015, "y":.90}
+            
+        Label:
+            id: blankspace
+            size_hint: .006, .006
+            background_color: .78 , 1.72 , .55 , 1
+        TextInput:
+            id: text_to_search
+            text:"Bookings"
+            font_size: '18sp'
+            halign: 'center'
+            valign: 'middle'
+            size_hint: .05, .05
+            pos_hint: {"x":.05, "y":.90}
+        Label:
+            id: blankspace
+            size_hint: .002, .002
+        Button:
+            id: search
+            text: "Search"
+            on_press: print("Searching for bookings")
+            background_color: .20,.60,1.53,1
+            #size_hint: Length, Width
+            size_hint: .01, .05
+            pos_hint: {"x":.15, "y":.90}
+        Label:
+            id: blankspace
+            size_hint: .055, .05
+        Button:
+            id: view_account_button
+            text: "View Account"
+            on_press: print("Account")
+            background_color: .20,.60,1.53,1
+            #size_hint: Length, Width
+            size_hint: .025, .05
+            pos_hint: {"x":.80, "y":.90}
+            on_release: 
+                root.manager.current= "signIn"
+                root.manager.transition.direction = "right"
+        Label:
+            id: blankspace
+            size_hint: .002, .002
+
