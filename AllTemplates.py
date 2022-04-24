@@ -10,7 +10,9 @@ from kivy.lang import Builder
 class AllTemplates():
     def loadTemplates(self):
         Builder.load_file("Homepage.kv")
-        # Builder.load_file("Home.kv")
+        Builder.load_file("view.kv")
+        Builder.load_file("view2.kv")
+        Builder.load_file("view3.kv")
         # Builder.load_file("name.kv")
         
       
