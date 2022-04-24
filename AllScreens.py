@@ -29,13 +29,18 @@ class AllScreens():
         viewPage = view(name="view")
         viewPage2 = view(name="view2")
         viewPage3 = view(name="view3")
+        viewPage4 = view(name="view4")
+        viewPage5 = view(name="view5")
+       
 
      #------- add variable here for screen to load--------
         allScreens= {
             "homeScreen" : home,
             "viewScreen1": viewPage,
             "viewScreen2": viewPage2,
-            "viewScreen3": viewPage3
+            "viewScreen3": viewPage3,
+            "viewScreen4": viewPage4,
+            "viewScreen5": viewPage5
         }
         return allScreens
 
@@ -90,6 +95,33 @@ class view3(Screen):
         i=0
         AllScreens.switchPageTo('homeScreen')
     pass
+
+class view4(Screen):
+    global i
+    global pict
+    def pic(self):
+        pict= 'chartp.jpg'
+        return pict       
+        
+        
+    def on_click(self):
+        i=0
+        AllScreens.switchPageTo('homeScreen')
+    pass
+
+class view5(Screen):
+    global i
+    global pict
+    def pic(self):
+        pict= 'chartp.jpg'
+        return pict       
+        
+        
+    def on_click(self):
+        i=0
+        AllScreens.switchPageTo('homeScreen')
+    pass
+
 class homepage(Screen):
     # show image 1
     global i
@@ -108,11 +140,12 @@ class homepage(Screen):
         AllScreens.switchPageTo('viewScreen3')
     
     def on_click22(self):
-        repeated_buttons().navigate_to_homepage()
+        i=4
+        AllScreens.switchPageTo('viewScreen4')
     
     def on_click23(self):
-        repeated_buttons().navigate_to_Search()
-    
+        i=5
+        AllScreens.switchPageTo('viewScreen5')    
     # def process_Input(self):
     #     All_Text_Input.user_Input_search(self) 
     pass
