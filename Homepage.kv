@@ -1,7 +1,9 @@
 #:kivy 1.0
 
 MDScreen:
-    md_bg_color: [60/255, 140/255, 255/255, 1]
+    md_bg_color: [255/255, 255/255, 255/255, 1]
+    # md_bg_color: [60/255, 140/255, 255/255, 1]
+    # background_color: (48/255, 255/255, 59/255, 1)
     # color:"Green"
 
 <homepage>
@@ -11,13 +13,15 @@ MDScreen:
         size: (root.width, root.height)
         Label:
             color:'green'
+            # md_bg_color: [48/255, 255/255, 59/255, 1]
             size_hint:(.3,.1)
             text: "Big Data Analysis Project"
             
         MDCard:
             # size_hint:(1,1)
             # pos_hint: {"center_x": 0.50, "y": 0}
-            # background_color:'green'
+            md_bg_color: [255/255, 255/255, 255/255, 1]
+            # background_color:(48/255, 255/255, 59/255, 1)
             ScrollView:
                 orientation: "vertical"
                 size_hint_y: .99
@@ -44,6 +48,7 @@ MDScreen:
                 
                     # color: "Gray"
                     MDCard:
+                        md_bg_color: [255/255, 255/255, 255/255, 1]
                         MDCarousel:
                             id: pic
                             # size_hint:(1,1)
@@ -55,20 +60,20 @@ MDScreen:
                         
                     ScrollView:
                         orientation: "vertical"
-                        size_hint_y: .99
-                        size_hint_x: .99
-                        pos_hint: {'x':.03, 'y':.001}
+                        size_hint_y: .9
+                        size_hint_x: .9
+                        pos_hint: {'x':.05, 'y':.001}
                         do_scroll_x:False
                         do_scroll_y:True
                         
                         MDGridLayout:
                             id: view
                             cols: 2
-                            
+                            # md_bg_color: [48/255, 255/255, 59/255, 1]
                             # pos_hint: {"center_x": .5, "center_y": 0.02}
                             size: (root.width, root.height)
                             # padding: .1
-                            size_hint_x: .9
+                            size_hint_x: .99
                             size_hint_y: None
                             height: self.minimum_height
                             # row_default_height: 300
@@ -91,13 +96,13 @@ MDScreen:
                                     Label:
                                         text: "Analyzing houses under 15000"
                                         font_size: 15
-                                        color: 'black'
+                                        color: 'green'
                                         size_hint:(.9,.05)
                                         pos_hint: {"center_x": 0.5, "center_y": 0.1}
                                     Label:
                                         text: "What we did"
                                         font_size: 13
-                                        color: 'black'
+                                        color: 'green'
                                         size_hint:(.9,.3)
                                         pos_hint: {"center_x": 0.2, "center_y": 0.99}
                                     Button:
@@ -147,13 +152,13 @@ MDScreen:
                                 Label:
                                     text: "Analyzing houses under 15000"
                                     font_size: 15
-                                    color: 'black'
+                                    color: 'green'
                                     size_hint:(.9,.05)
                                     pos_hint: {"center_x": 0.5, "center_y": 0.1}
                                 Label:
                                     text: "What we did"
                                     font_size: 13
-                                    color: 'black'
+                                    color: 'green'
                                     size_hint:(.9,.3)
                                     pos_hint: {"center_x": 0.2, "center_y": 0.99}
                                 Button:
@@ -206,18 +211,19 @@ MDScreen:
                                     Label:
                                         text: "Analyzing houses under 15000"
                                         font_size: 15
-                                        color: 'black'
+                                        color: 'green'
                                         size_hint:(.9,.05)
                                         pos_hint: {"center_x": 0.5, "center_y": 0.1}
                                     Label:
                                         text: "What we did"
                                         font_size: 13
-                                        color: 'black'
+                                        color: 'green'
                                         size_hint:(.9,.3)
                                         pos_hint: {"center_x": 0.2, "center_y": 0.99}
                                     Button:
                                         text: "View"
                                         size_hint:(.2,.05)
+                                        
                                         pos_hint: {"center_x": 0.5, "center_y": 0.80}
                                         on_press: 
                                             print("view chart")
@@ -260,13 +266,13 @@ MDScreen:
                                 Label:
                                     text: "Analyzing houses under 15000"
                                     font_size: 15
-                                    color: 'black'
+                                    color: 'green'
                                     size_hint:(.9,.05)
                                     pos_hint: {"center_x": 0.5, "center_y": 0.1}
                                 Label:
                                     text: "What we did"
                                     font_size: 13
-                                    color: 'black'
+                                    color: 'green'
                                     size_hint:(.9,.3)
                                     pos_hint: {"center_x": 0.2, "center_y": 0.99}
                                 Button:
