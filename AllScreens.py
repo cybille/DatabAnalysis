@@ -3,24 +3,39 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import Screen
 from AllButtons import repeated_buttons
+from kivy.lang.builder import Builder
+from kivy.uix.widget import Widget
+
+
+
+
 
 
 
 login = None
 sm= ScreenManager() 
 allScreens= {}
+i=0
+pict= ' '
 # Front end only, identifies different screens it can navigate to
 class AllScreens():
     global allScreens
     global sm
+    
     #------- create variable here for screen--------
     def screen(self):
     
         home = homepage(name="home")
+        viewPage = view(name="view")
+        viewPage2 = view(name="view2")
+        viewPage3 = view(name="view3")
 
      #------- add variable here for screen to load--------
         allScreens= {
-            "homeScreen" : home
+            "homeScreen" : home,
+            "viewScreen1": viewPage,
+            "viewScreen2": viewPage2,
+            "viewScreen3": viewPage3
         }
         return allScreens
 
@@ -41,16 +56,56 @@ class AllScreens():
         sm.switch_to(screens[page])
 
 
-class homepage(Screen):
-    # show image
+class view(Screen):
+    global i
+    global pict
+    def pic(self):
+        pict= 'chartp.jpg'
+        return pict
     def on_click(self):
-        repeated_buttons().on_click_Search_Button()
+        i=0
+        AllScreens.switchPageTo('homeScreen')
+    pass
+
+class view2(Screen):
+    global i
+    global pict
+    def pic(self):
+        pict= 'chartp.jpg'
+        return pict 
+    def on_click(self):
+        i=0
+        AllScreens.switchPageTo('homeScreen')
+    pass
+        
+class view3(Screen):
+    global i
+    global pict
+    def pic(self):
+        pict= 'chartp.jpg'
+        return pict       
+        
+        
+    def on_click(self):
+        i=0
+        AllScreens.switchPageTo('homeScreen')
+    pass
+class homepage(Screen):
+    # show image 1
+    global i
+    
+    def on_click(self):
+        i=1
+        AllScreens.switchPageTo('viewScreen1')
+        
     # show image 2
     def on_click2(self):
-        repeated_buttons().navigate_to_loyalty()
+        i=2
+        AllScreens.switchPageTo('viewScreen2')
     # show image 3
     def on_click21(self):
-        repeated_buttons().navigate_to_account()
+        i=3
+        AllScreens.switchPageTo('viewScreen3')
     
     def on_click22(self):
         repeated_buttons().navigate_to_homepage()
