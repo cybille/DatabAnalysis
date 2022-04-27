@@ -65,7 +65,7 @@ class view(Screen):
     global i
     global pict
     def pic(self):
-        pict= 'chartp.jpg'
+        pict= 'price/state.png'
         return pict
     def on_click(self):
         i=0
