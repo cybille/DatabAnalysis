@@ -67,6 +67,9 @@ class view(Screen):
     def pic(self):
         pict= 'price/state.png'
         return pict
+    def pic2(self):
+        pict= 'price/state.png'
+        return pict    
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -114,7 +117,11 @@ class view5(Screen):
     global pict
     def pic(self):
         pict= 'chartp.jpg'
-        return pict       
+        return pict    
+
+    def pic2(self):
+        pict= 'chartp.jpg'
+        return pict    
         
         
     def on_click(self):
@@ -148,4 +155,20 @@ class homepage(Screen):
         AllScreens.switchPageTo('viewScreen5')    
     # def process_Input(self):
     #     All_Text_Input.user_Input_search(self) 
+
+    def pic(self):
+        pict= 'price/state.png'
+        return pict
+    def pic2(self):
+        pict= 'price/state.png'
+        return pict 
+    def pic3(self):
+        pict= 'price/state.png'
+        return pict
+    def pic4(self):
+        pict= 'price/state.png'
+        return pict   
+    def pic5(self):
+        pict= 'price/state.png'
+        return pict  
     pass
