@@ -4,8 +4,8 @@ MDScreen:
     md_bg_color: [60/255, 140/255, 255/255, 1]
     # color:"Green"
 
-<view2>
-    name: "home"
+<codeSource>
+    name: "codeSource"
     BoxLayout:
         orientation: "vertical"
         size: (root.width, root.height)
@@ -38,7 +38,7 @@ MDScreen:
                     Label:
                         pos_hint: {"center_x": .5, "center_y": .1}
                         size_hint:(1,.1)
-                        text: "Housing Analysis: Accessability"
+                        text: "Housing Analysis: Code sources"
                         color: "green"
                         font_size: 30
        
@@ -75,6 +75,15 @@ MDScreen:
                                         id: chart
                                         source: root.pic2()
                                         allow_stretch: True
+                            
+                                    AsyncImage:
+                                        id: chart 
+                                        source: root.pic()
+                                        allow_stretch: True 
+                                    AsyncImage:
+                                        id: chart
+                                        source: root.pic2()
+                                        allow_stretch: True
                                     # add more graphs
 
                             Button:
@@ -84,3 +93,5 @@ MDScreen:
                                 on_press: 
                                     print("view chart")
                                     root.on_click()
+
+                     

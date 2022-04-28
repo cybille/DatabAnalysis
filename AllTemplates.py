@@ -15,6 +15,7 @@ class AllTemplates():
         Builder.load_file("view3.kv")
         Builder.load_file("view4.kv")
         Builder.load_file("view5.kv")
+        Builder.load_file("codeSource.kv")
         # Builder.load_file("name.kv")
         
       
