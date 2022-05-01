@@ -19,19 +19,19 @@ class text():
         return Title
 
     def Topic2(self):
-        Title= None
+        Title= 'Analyzing'
         return Title
 
     def Topic3(self):
-        Title= None
+        Title= 'Analyzing'
         return Title
 
     def Topic4(self):
-        Title= None
+        Title= 'Analyzing'
         return Title
     
     def Topic5(self):
-        Title= None
+        Title= 'Analyzing'
         return Title
     
 
@@ -40,19 +40,19 @@ class text():
         return Title
 
     def Topic2D(self):
-        Title= None
+        Title= " Filtered for:"
         return Title
 
     def Topic3D(self):
-        Title= None
+        Title= " Filtered for:"
         return Title
 
     def Topic4D(self):
-        Title= None
+        Title= " Filtered for:"
         return Title
     
     def Topic5D(self):
-        Title= None
+        Title= " Filtered for:"
         return Title
 
 
