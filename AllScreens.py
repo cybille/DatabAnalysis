@@ -104,10 +104,13 @@ class view2(Screen):
         pict= 'chartp.jpg'
         return pict 
     def pic4(self):
-        pict= 'one bed/House W One Bedroom in NY.png'
+        pict= 'one bed\Price of Houses in NY with One Bedroom and SqFt Below 800 (1).png'
         return pict   
     def pic5(self):
-        pict= 'one bed/Price of Houses in NY with One Bedroom and SqFt Below 800.png'
+        pict= 'one bed\Price of Houses in NY with One Bedroom and Below $50,000.png'
+        return pict 
+    def pic6(self):
+        pict= 'one bed\Price of Houses in NY with One Bedroom and SqFt Below 800 (1).png'
         return pict 
     def on_click(self):
         i=0
@@ -225,13 +228,13 @@ class homepage(Screen):
         return pict  
 # view2
     def pic4(self):
-        pict= 'one bed/House W One Bedroom in NY.png'
+        pict= 'one bed\Price of Houses in NY with One Bedroom and SqFt Below 800 (1).png'
         return pict   
     def pic5(self):
-        pict= 'one bed/Price of Houses in NY with One Bedroom and SqFt Below 800.png'
+        pict= 'one bed\Price of Houses in NY with One Bedroom and Below $50,000.png'
         return pict 
     def pic6(self):
-        pict= 'price/state.png'
+        pict= 'one bed\Price of Houses in NY with One Bedroom and SqFt Below 800 (1).png'
         return pict
 # view3
     def pic7(self):

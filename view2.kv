@@ -38,7 +38,7 @@ MDScreen:
                     Label:
                         pos_hint: {"center_x": .5, "center_y": .1}
                         size_hint:(1,.1)
-                        text: "Housing Analysis: room"
+                        text: "Housing Analysis: One room only"
                         color: "green"
                         font_size: 30
        
@@ -74,6 +74,10 @@ MDScreen:
                                     AsyncImage:
                                         id: chart
                                         source: root.pic5()
+                                        allow_stretch: True
+                                    AsyncImage:
+                                        id: chart
+                                        source: root.pic6()
                                         allow_stretch: True
                                     # add more graphs
 
