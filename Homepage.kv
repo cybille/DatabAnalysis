@@ -25,6 +25,7 @@ MDScreen:
                 hint_text:"search"
                 size_hint:(.5,.7)
                 pos_hint: {"center_x": .1, "center_y": 0.50}
+                on_text: root.process_Input()
             
             Button:
                 text:"View Code"
@@ -71,11 +72,27 @@ MDScreen:
                     MDCard:
                         md_bg_color: [255/255, 255/255, 255/255, 1]
                         size_hint:(1,.8)
+                        loop: True
+                        anim_move_duration: .08
+                        direction: 'right'
+                        load_next(mode='next')¶
                         MDCarousel:
                             id: pic
                             direction: 'left'
                             AsyncImage:
                                 source: 'house.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-charles-parker-5845715.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-dinesh-boaz-39273.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-matthis-2156927.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source:'pexels-binyamin-mellish-106399.jpg'
                                 allow_stretch: True
                                 # AsyncImage:
                                 #     source: 'bg.png'
@@ -158,11 +175,19 @@ MDScreen:
                                         MDCarousel:
                                             id: pic
                                             # size_hint:(1,1)
-                                            direction: 'left'
+                                            direction: 'right'
                                             AsyncImage:
-                                                source: 'price/state.png'
-                                                # AsyncImage:
-                                                #     source: 'bg.png'
+                                                id: chart 
+                                                source: root.pic()
+                                                allow_stretch: True 
+                                            AsyncImage:
+                                                id: chart
+                                                source: root.pic2()
+                                                allow_stretch: True
+                                            AsyncImage:
+                                                id: chart
+                                                source: root.pic3()
+                                                allow_stretch: True
                             MDBoxLayout: #Top Left Result
                                 orientation:'vertical'
                                 id: result

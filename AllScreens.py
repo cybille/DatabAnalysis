@@ -68,11 +68,12 @@ class codeSource(Screen):
     global i
     global pict
     def pic(self):
-        pict= 'price/state.png'
+        pict= 'price/housesunder50instates.png'
         return pict
     def pic2(self):
         pict= 'price/state.png'
         return pict    
+        
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -82,11 +83,14 @@ class view(Screen):
     global i
     global pict
     def pic(self):
-        pict= 'price/state.png'
+        pict= 'price/housesunder50instates.png'
         return pict
     def pic2(self):
-        pict= 'price/state.png'
+        pict= 'price/regions inNYC price.png'
         return pict    
+    def pic3(self):
+        pict= 'price/typesandpriceinny.png'
+        return pict   
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -101,6 +105,9 @@ class view2(Screen):
     def pic2(self):
         pict= 'chartp.jpg'
         return pict 
+    def pic3(self):
+        pict= 'chartp.jpg'
+        return pict  
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -114,7 +121,10 @@ class view3(Screen):
         return pict 
     def pic2(self):
         pict= 'chartp.jpg'
-        return pict        
+        return pict
+    def pic3(self):
+        pict= 'chartp.jpg'
+        return pict          
         
         
     def on_click(self):
@@ -131,6 +141,10 @@ class view4(Screen):
     def pic2(self):
         pict= 'chartp.jpg'
         return pict 
+    def pic3(self):
+        pict= 'chartp.jpg'
+        return pict  
+
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -146,7 +160,10 @@ class view5(Screen):
     def pic2(self):
         pict= 'chartp.jpg'
         return pict    
-        
+    
+    def pic3(self):
+        pict= 'chartp.jpg'
+        return pict  
         
     def on_click(self):
         i=0
@@ -183,22 +200,47 @@ class homepage(Screen):
         AllScreens.switchPageTo('codeScreen')
 
     def process_Input(self):
-        search= self.ids.search.TextInput
+        search= self.ids.search.text
+        print(search)
         return search
 
     def pic(self):
-        pict= 'price/state.png'
+        pict= 'price/housesunder50instates.png'
         return pict
     def pic2(self):
-        pict= 'price/state.png'
-        return pict 
+        pict= 'price/regions inNYC price.png'
+        return pict    
     def pic3(self):
-        pict= 'price/state.png'
-        return pict
+        pict= 'price/typesandpriceinny.png'
+        return pict  
+
     def pic4(self):
         pict= 'price/state.png'
         return pict   
     def pic5(self):
         pict= 'price/state.png'
-        return pict  
+        return pict 
+    def pic6(self):
+        pict= 'price/state.png'
+        return pict
+
+    def pic7(self):
+        pict= 'price/state.png'
+        return pict 
+    def pic8(self):
+        pict= 'price/state.png'
+        return pict 
+    def pic9(self):
+        pict= 'price/state.png'
+        return pict   
+    
+    def pic10(self):
+        pict= 'price/state.png'
+        return pict 
+    def pic11(self):
+        pict= 'price/state.png'
+        return pict 
+    def pic12(self):
+        pict= 'price/state.png'
+        return pict 
     pass
