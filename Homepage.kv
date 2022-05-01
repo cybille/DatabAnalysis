@@ -42,8 +42,8 @@ MDScreen:
         MDCard:
             size_hint:(1,1)
             # pos_hint: {"center_x": 0.50, "y": 0}
-            md_bg_color: [255/255, 255/255, 255/255, 1]
-            # background_color:(48/255, 255/255, 59/255, 1)
+            # md_bg_color: [255/255, 255/255, 255/255, 1]
+            background_color:(48/255, 255/255, 59/255, 1)
             ScrollView:
                 orientation: "vertical"
                 size_hint_y: .99
@@ -99,8 +99,8 @@ MDScreen:
                     ScrollView:
                         orientation: "vertical"
                         size_hint_y: 1
-                        size_hint_x: .99
-                        pos_hint: {'x':0, 'y':.001}
+                        size_hint_x: .9
+                        pos_hint: {'x':.05, 'y':.001}
                         do_scroll_x:False
                         do_scroll_y:True
                         # always_overscroll:True
@@ -108,25 +108,19 @@ MDScreen:
                         MDGridLayout:
                             id: view
                             cols: 2
-                            # row:5
-                            # md_bg_color: [48/255, 255/255, 59/255, 1]
-                            # pos_hint: {"center_x": .5, "center_y": 0.02}
+                           
                             size: (root.width, root.height)
                             # padding: .1
-                            # size_hint_x: .99
+                            size_hint_x: .99
                             size_hint_y: None
                             height: self.minimum_height
-                            # row_default_height: 200
-                            # row_force_default: True 
+                          
                             # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
                                 orientation:'horizontal'
                                 id: result
-                                # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.3, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                size_hint: (.5, .7)
                                 halign: "center"
-                                # spacing: 25
                                 MDBoxLayout:
                                     id:room
                                     orientation: 'vertical'
@@ -145,7 +139,7 @@ MDScreen:
                                         font_size: 13
                                         color: 'green'
                                         size_hint:(.9,.3)
-                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                        pos_hint: {"center_x": .25, "center_y": 0.99}
                                     Button:
                                         text: "View"
                                         size_hint:(.2,.05)
@@ -208,7 +202,7 @@ MDScreen:
                                     font_size: 13
                                     color: 'green'
                                     size_hint:(.9,.3)
-                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                    pos_hint: {"center_x": .44, "center_y": 0.99}
                                 Button:
                                     text: "View"
                                     size_hint:(.2,.05)
@@ -222,7 +216,7 @@ MDScreen:
                                 orientation:'horizontal'
                                 id: result
                                 # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.4, .7)
+                                size_hint: (.5, .7)
                                 # pos_hint: {"center_x": 0.1, "center_y": 0.54}
                                 halign: "center"
                                 # spacing: 25
@@ -252,7 +246,7 @@ MDScreen:
                                 orientation:'vertical'
                                 id: result
                                 # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.2, .7)
+                                size_hint: (.5, .7)
                                 # pos_hint: {"center_x": 0.1, "center_y": 0.54}
                                 halign: "center"
                                 # spacing: 25
@@ -274,7 +268,7 @@ MDScreen:
                                         font_size: 13
                                         color: 'green'
                                         size_hint:(.9,.3)
-                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                        pos_hint: {"center_x": .5, "center_y": 0.99}
                                     Button:
                                         text: "View"
                                         size_hint:(.2,.05)
@@ -316,7 +310,7 @@ MDScreen:
                                 orientation:'vertical'
                                 id: result
                                 md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.2, .7)
+                                size_hint: (.5, .7)
                                 # pos_hint: {"center_x": 0.1, "center_y": 0.54}
                                 halign: "center"
                                 # spacing: 25
@@ -331,7 +325,7 @@ MDScreen:
                                     font_size: 13
                                     color: 'green'
                                     size_hint:(.9,.3)
-                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                    pos_hint: {"center_x": .45, "center_y": 0.99}
                                 Button:
                                     text: "View"
                                     size_hint:(.2,.05)
@@ -383,7 +377,7 @@ MDScreen:
                                 orientation:'horizontal'
                                 id: result
                                 # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.3, .7)
+                                size_hint: (.5, .7)
                                 # pos_hint: {"center_x": 0.1, "center_y": 0.54}
                                 halign: "center"
                                 # spacing: 25
@@ -405,7 +399,7 @@ MDScreen:
                                         font_size: 13
                                         color: 'green'
                                         size_hint:(.9,.3)
-                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                        pos_hint: {"center_x": .35, "center_y": 0.99}
                                     Button:
                                         text: "View"
                                         size_hint:(.2,.05)
