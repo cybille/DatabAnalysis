@@ -142,12 +142,18 @@ class view4(Screen):
     def pic(self):
         pict= 'chartp.jpg'
         return pict 
-    def pic2(self):
-        pict= 'chartp.jpg'
+    def pic10(self):
+        pict= 'parking\park1.jpg'
         return pict 
-    def pic3(self):
-        pict= 'chartp.jpg'
-        return pict  
+    def pic11(self):
+        pict= 'parking\park2.jpg'
+        return pict 
+    def pic12(self):
+        pict= 'parking\park3.jpg'
+        return pict 
+    def pic13(self):
+        pict= 'parking\park4.jpg'
+        return pict 
 
     def on_click(self):
         i=0
@@ -207,7 +213,7 @@ class homepage(Screen):
         search= self.ids.search.text
         print(search)
         return search
-
+# view1
     def pic(self):
         pict= 'price/housesunder50instates.png'
         return pict
@@ -217,7 +223,7 @@ class homepage(Screen):
     def pic3(self):
         pict= 'price/typesandpriceinny.png'
         return pict  
-
+# view2
     def pic4(self):
         pict= 'one bed/House W One Bedroom in NY.png'
         return pict   
@@ -227,7 +233,7 @@ class homepage(Screen):
     def pic6(self):
         pict= 'price/state.png'
         return pict
-
+# view3
     def pic7(self):
         pict= 'pets\Houses in NY without pets.png'
         return pict 
@@ -237,16 +243,26 @@ class homepage(Screen):
     def pic9(self):
         pict= 'pets\House below 50000 that allow cats and dogs.png'
         return pict   
-    
+# view4
     def pic10(self):
-        pict= 'price/state.png'
+        pict= 'parking\park1.jpg'
         return pict 
     def pic11(self):
-        pict= 'price/state.png'
+        pict= 'parking\park2.jpg'
         return pict 
     def pic12(self):
+        pict= 'parking\park3.jpg'
+        return pict 
+    def pic13(self):
+        pict= 'parking\park4.jpg'
+        return pict 
+# view5
+    def pic14(self):
         pict= 'price/state.png'
         return pict 
+    def pic15(self):
+        pict= 'price/state.png'
+        return pict
 
 
 # Text-----------------
