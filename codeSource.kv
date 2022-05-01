@@ -1,0 +1,97 @@
+#:kivy 1.0
+
+MDScreen:
+    md_bg_color: [60/255, 140/255, 255/255, 1]
+    # color:"Green"
+
+<codeSource>
+    name: "codeSource"
+    BoxLayout:
+        orientation: "vertical"
+        size: (root.width, root.height)
+        Label:
+            color:'green'
+            size_hint:(.3,.1)
+            text: "Big Data Analysis Project"
+            
+        MDCard:
+            # size_hint:(1,1)
+            # pos_hint: {"center_x": 0.50, "y": 0}
+            # background_color:'green'
+            ScrollView:
+                orientation: "vertical"
+                size_hint_y: .99
+                size_hint_x: .99
+                pos_hint: {'x':.03, 'y':.001}
+                do_scroll_x:False
+                do_scroll_y:True
+                
+             
+                BoxLayout:   
+                    orientation:"vertical"
+                    size_hint:(1,.9)
+                    size_hint_y: None
+                    size: (root.width, root.height)
+                    height: self.minimum_height
+                    
+                    
+                    Label:
+                        pos_hint: {"center_x": .5, "center_y": .1}
+                        size_hint:(1,.1)
+                        text: "Housing Analysis: Code sources"
+                        color: "green"
+                        font_size: 30
+       
+                    MDGridLayout:
+                        id: view
+                        cols: 1
+                        pos_hint: {'x':.03, 'y':.3}
+                        size_hint:(.9, .9)
+                    
+                        MDBoxLayout: #Top Left Result
+                            orientation:"vertical"
+                            id: result
+                            # md_bg_color: [219/255, 219/255, 219/255, 1]
+                            size_hint: (.9, .9)
+                            # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                            halign: "center"
+                            # spacing: 25
+                            MDBoxLayout:
+                                id:room
+                                orientation: "vertical"
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint:(.60, .60)
+                                text: "room"
+                                pos_hint: {"center_x": 0.5, "center_y": 0.50}
+                                MDCarousel:
+                                    id: pic
+                                    size_hint:(1,1)
+                                    direction: 'right'
+                                    AsyncImage:
+                                        id: chart 
+                                        source: root.pic()
+                                        allow_stretch: True 
+                                    AsyncImage:
+                                        id: chart
+                                        source: root.pic2()
+                                        allow_stretch: True
+                            
+                                    AsyncImage:
+                                        id: chart 
+                                        source: root.pic()
+                                        allow_stretch: True 
+                                    AsyncImage:
+                                        id: chart
+                                        source: root.pic2()
+                                        allow_stretch: True
+                                    # add more graphs
+
+                            Button:
+                                text: "Back"
+                                size_hint:(.2,.05)
+                                pos_hint: {"center_x": 0.5, "center_y": 0.30}
+                                on_press: 
+                                    print("view chart")
+                                    root.on_click()
+
+                     

@@ -21,14 +21,26 @@ MDScreen:
                 text: "Big Data Analysis Project"
                 pos_hint: {"center_x": 0, "center_y": 0.55}
             TextInput:
+                id: search
                 hint_text:"search"
                 size_hint:(.5,.7)
                 pos_hint: {"center_x": .1, "center_y": 0.50}
+                on_text: root.process_Input()
+            
+            Button:
+                text:"View Code"
+                size_hint:(.08,.05)
+                pos_hint: {"center_x": .5, "center_y": 0.50}
+                on_press: 
+                    print("view code")
+                    root.on_click3()
+                on_release: 
+                    root.manager.transition.direction = "left"
 
             
             
         MDCard:
-            # size_hint:(1,1)
+            size_hint:(1,1)
             # pos_hint: {"center_x": 0.50, "y": 0}
             md_bg_color: [255/255, 255/255, 255/255, 1]
             # background_color:(48/255, 255/255, 59/255, 1)
@@ -60,33 +72,51 @@ MDScreen:
                     MDCard:
                         md_bg_color: [255/255, 255/255, 255/255, 1]
                         size_hint:(1,.8)
+                        loop: True
+                        anim_move_duration: .08
+                        direction: 'right'
                         MDCarousel:
                             id: pic
                             direction: 'left'
                             AsyncImage:
                                 source: 'house.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-charles-parker-5845715.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-dinesh-boaz-39273.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source: 'pexels-matthis-2156927.jpg'
+                                allow_stretch: True
+                            AsyncImage:
+                                source:'pexels-binyamin-mellish-106399.jpg'
+                                allow_stretch: True
                                 # AsyncImage:
                                 #     source: 'bg.png'
                         
                     ScrollView:
                         orientation: "vertical"
-                        size_hint_y: .9
-                        size_hint_x: .9
-                        pos_hint: {'x':.05, 'y':.001}
+                        size_hint_y: 1
+                        size_hint_x: .99
+                        pos_hint: {'x':0, 'y':.001}
                         do_scroll_x:False
                         do_scroll_y:True
-                        
+                        # always_overscroll:True
+                        #start options--------------------------------------------- 
                         MDGridLayout:
                             id: view
                             cols: 2
+                            # row:5
                             # md_bg_color: [48/255, 255/255, 59/255, 1]
                             # pos_hint: {"center_x": .5, "center_y": 0.02}
                             size: (root.width, root.height)
                             # padding: .1
-                            size_hint_x: .99
+                            # size_hint_x: .99
                             size_hint_y: None
                             height: self.minimum_height
-                            # row_default_height: 300
+                            # row_default_height: 200
                             # row_force_default: True 
                             MDBoxLayout: #Top Left Result
                                 orientation:'horizontal'
@@ -104,13 +134,252 @@ MDScreen:
                                     text: "room"
                                     # pos_hint: {"center_x": 0.1, "center_y": 0.50}
                                     Label:
-                                        text: "Analyzing houses under 15000"
+                                        text: root.title1()
                                         font_size: 15
                                         color: 'green'
-                                        size_hint:(.9,.05)
+                                        size_hint:(.8,.06)
                                         pos_hint: {"center_x": 0.5, "center_y": 0.1}
                                     Label:
-                                        text: "What we did"
+                                        text: root.detail1()
+                                        font_size: 13
+                                        color: 'green'
+                                        size_hint:(.9,.3)
+                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                    Button:
+                                        text: "View"
+                                        size_hint:(.2,.05)
+                                        pos_hint: {"center_x": 0.5, "center_y": 0.80}
+                                        on_press: 
+                                            print("view chart")
+                                            root.on_click()
+                                            
+                                        on_release: 
+                                            # app.root.current = "view"
+                                            root.manager.transition.direction = "left"
+                                        
+                            MDBoxLayout: #Top Right Result
+                                orientation:'horizontal'
+                                id: result
+
+                                size_hint: (.4, .7)
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    text: "room"
+                                    
+                             # color: "Gray"
+                                    MDCard:
+                                        
+                                        MDCarousel:
+                                            id: pic
+                                            # size_hint:(1,1)
+                                            direction: 'right'
+                                            AsyncImage:
+                                                id: chart 
+                                                source: root.pic()
+                                                allow_stretch: True 
+                                            AsyncImage:
+                                                id: chart
+                                                source: root.pic2()
+                                                allow_stretch: True
+                                            AsyncImage:
+                                                id: chart
+                                                source: root.pic3()
+                                                allow_stretch: True
+                            MDBoxLayout: #Top Left Result
+                                orientation:'vertical'
+                                id: result
+                                md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.5, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                Label:
+                                    text: root.title2()
+                                    font_size: 15
+                                    color: 'green'
+                                    size_hint:(.8,.06)
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                                Label:
+                                    text: root.detail2()
+                                    font_size: 13
+                                    color: 'green'
+                                    size_hint:(.9,.3)
+                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                Button:
+                                    text: "View"
+                                    size_hint:(.2,.05)
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.80}
+                                    on_press: 
+                                        print("view chart")
+                                        root.on_click2()
+                                    on_release: 
+                                        root.manager.transition.direction = "left"
+                            MDBoxLayout: #Top Right Result
+                                orientation:'horizontal'
+                                id: result
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.4, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                    # size_hint:(.30, .60)
+                                    text: "room"
+                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                                    MDCard:
+                                        MDCarousel:
+                                            id: pic
+                                            # size_hint:(1,1)
+                                            direction: 'left'
+                                            AsyncImage:
+                                                source: root.pic()
+                                                # AsyncImage:
+                                                #     source: 'bg.png'
+                            MDBoxLayout: #Top Left Result
+                                orientation:'vertical'
+                                id: result
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.2, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    orientation: 'vertical'
+                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                    # size_hint:(.30, .60)
+                                    text: "room"
+                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                                    Label:
+                                        text: root.title3()
+                                        font_size: 15
+                                        color: 'green'
+                                        size_hint:(.8,.06)
+                                        pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                                    Label:
+                                        text: root.detail3()
+                                        font_size: 13
+                                        color: 'green'
+                                        size_hint:(.9,.3)
+                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                    Button:
+                                        text: "View"
+                                        size_hint:(.2,.05)
+                                        
+                                        pos_hint: {"center_x": 0.5, "center_y": 0.80}
+                                        on_press: 
+                                            print("view chart")
+                                            root.on_click21()
+                                        on_release: 
+                                            root.manager.transition.direction = "left"
+                                            
+
+                            MDBoxLayout: #Top Right Result
+                                orientation:'horizontal'
+                                id: result
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.4, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                    # size_hint:(.30, .60)
+                                    text: "room"
+                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                                    MDCard:
+                                        MDCarousel:
+                                            id: pic
+                                            # size_hint:(1,1)
+                                            direction: 'left'
+                                            AsyncImage:
+                                                source: root.pic()
+                                                allow_stretch: True
+                                                # AsyncImage:
+                                                #     source: 'bg.png'
+                            MDBoxLayout: #Top Left Result
+                                orientation:'vertical'
+                                id: result
+                                md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.2, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                Label:
+                                    text: root.title4()
+                                    font_size: 15
+                                    color: 'green'
+                                    size_hint:(.8,.06)
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                                Label:
+                                    text: root.detail4()
+                                    font_size: 13
+                                    color: 'green'
+                                    size_hint:(.9,.3)
+                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
+                                Button:
+                                    text: "View"
+                                    size_hint:(.2,.05)
+                                    pos_hint: {"center_x": 0.5, "center_y": 0.80}
+                                    on_press: 
+                                        print("view chart")
+                                        root.on_click22()
+                                    on_release: 
+                                        root.manager.transition.direction = "left"
+
+                            MDBoxLayout: #Top Right Result
+                                orientation:'horizontal'
+                                id: result
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.4, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                    # size_hint:(.30, .60)
+                                    text: "room"
+                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                                    MDCard:
+                                        MDCarousel:
+                                            id: pic
+                                            # size_hint:(1,1)
+                                            direction: 'left'
+                                            AsyncImage:
+                                                source: root.pic()
+                                                # AsyncImage:
+                                                #     source: 'bg.png'
+
+                            MDBoxLayout: #Top Left Result
+
+                                orientation:'horizontal'
+                                id: result
+                                # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                size_hint: (.3, .7)
+                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
+                                halign: "center"
+                                # spacing: 25
+                                MDBoxLayout:
+                                    id:room
+                                    orientation: 'vertical'
+                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
+                                    # size_hint:(.30, .60)
+                                    text: "room"
+                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
+                                    Label:
+                                        text: root.title5()
+                                        font_size: 15
+                                        color: 'green'
+                                        size_hint:(.8,.06)
+                                        pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                                    Label:
+                                        text: root.detail5()
                                         font_size: 13
                                         color: 'green'
                                         size_hint:(.9,.3)
@@ -154,242 +423,7 @@ MDScreen:
                                             # size_hint:(1,1)
                                             direction: 'left'
                                             AsyncImage:
-                                                source: 'house.jpg'
+                                                source: root.pic()
                                                 # AsyncImage:
                                                 #     source: 'bg.png'
-                            MDBoxLayout: #Top Left Result
-                                orientation:'vertical'
-                                id: result
-                                md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.2, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                Label:
-                                    text: "Analyzing houses under 15000"
-                                    font_size: 15
-                                    color: 'green'
-                                    size_hint:(.9,.05)
-                                    pos_hint: {"center_x": 0.5, "center_y": 0.1}
-                                Label:
-                                    text: "What we did"
-                                    font_size: 13
-                                    color: 'green'
-                                    size_hint:(.9,.3)
-                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
-                                Button:
-                                    text: "View"
-                                    size_hint:(.2,.05)
-                                    pos_hint: {"center_x": 0.5, "center_y": 0.80}
-                                    on_press: 
-                                        print("view chart")
-                                        root.on_click2()
-                                    on_release: 
-                                        root.manager.transition.direction = "left"
-                            MDBoxLayout: #Top Right Result
-                                orientation:'horizontal'
-                                id: result
-                                # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.4, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                MDBoxLayout:
-                                    id:room
-                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                    # size_hint:(.30, .60)
-                                    text: "room"
-                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
-                                    MDCard:
-                                        MDCarousel:
-                                            id: pic
-                                            # size_hint:(1,1)
-                                            direction: 'left'
-                                            AsyncImage:
-                                                source: 'house.jpg'
-                                                # AsyncImage:
-                                                #     source: 'bg.png'
-                            MDBoxLayout: #Top Left Result
-                                orientation:'vertical'
-                                id: result
-                                # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.2, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                MDBoxLayout:
-                                    id:room
-                                    orientation: 'vertical'
-                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                    # size_hint:(.30, .60)
-                                    text: "room"
-                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
-                                    Label:
-                                        text: "Analyzing houses under 15000"
-                                        font_size: 15
-                                        color: 'green'
-                                        size_hint:(.9,.05)
-                                        pos_hint: {"center_x": 0.5, "center_y": 0.1}
-                                    Label:
-                                        text: "What we did"
-                                        font_size: 13
-                                        color: 'green'
-                                        size_hint:(.9,.3)
-                                        pos_hint: {"center_x": 0.2, "center_y": 0.99}
-                                    Button:
-                                        text: "View"
-                                        size_hint:(.2,.05)
-                                        
-                                        pos_hint: {"center_x": 0.5, "center_y": 0.80}
-                                        on_press: 
-                                            print("view chart")
-                                            root.on_click21()
-                                        on_release: 
-                                            root.manager.transition.direction = "left"
-                                            
-
-                            MDBoxLayout: #Top Right Result
-                                orientation:'horizontal'
-                                id: result
-                                # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.4, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                MDBoxLayout:
-                                    id:room
-                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                    # size_hint:(.30, .60)
-                                    text: "room"
-                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
-                                    MDCard:
-                                        MDCarousel:
-                                            id: pic
-                                            # size_hint:(1,1)
-                                            direction: 'left'
-                                            AsyncImage:
-                                                source: 'house.jpg'
-                                                # AsyncImage:
-                                                #     source: 'bg.png'
-                            MDBoxLayout: #Top Left Result
-                                orientation:'vertical'
-                                id: result
-                                md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.2, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                Label:
-                                    text: "Analyzing houses under 15000"
-                                    font_size: 15
-                                    color: 'green'
-                                    size_hint:(.9,.05)
-                                    pos_hint: {"center_x": 0.5, "center_y": 0.1}
-                                Label:
-                                    text: "What we did"
-                                    font_size: 13
-                                    color: 'green'
-                                    size_hint:(.9,.3)
-                                    pos_hint: {"center_x": 0.2, "center_y": 0.99}
-                                Button:
-                                    text: "View"
-                                    size_hint:(.2,.05)
-                                    pos_hint: {"center_x": 0.5, "center_y": 0.80}
-                                    on_press: 
-                                        print("view chart")
-                                        root.on_click22()
-                                    on_release: 
-                                        root.manager.transition.direction = "left"
-
-                            MDBoxLayout: #Top Right Result
-                                orientation:'horizontal'
-                                id: result
-                                # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                size_hint: (.4, .7)
-                                # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                halign: "center"
-                                # spacing: 25
-                                MDBoxLayout:
-                                    id:room
-                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                    # size_hint:(.30, .60)
-                                    text: "room"
-                                    # pos_hint: {"center_x": 0.1, "center_y": 0.50}
-                                    MDCard:
-                                        MDCarousel:
-                                            id: pic
-                                            # size_hint:(1,1)
-                                            direction: 'left'
-                                            AsyncImage:
-                                                source: 'house.jpg'
-                                                # AsyncImage:
-                                                #     source: 'bg.png'
-                                # MDBoxLayout: #Top Left Result
-                                #     orientation:'vertical'
-                                #     id: result
-                                #     # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                #     size_hint: (.2, .7)
-                                #     # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                #     halign: "center"
-                                #     # spacing: 25
-                                #     MDBoxLayout: #Top Left Result
-                                #         orientation:'vertical'
-                                #         id: result
-                                #         md_bg_color: [219/255, 219/255, 219/255, 1]
-                                #         size_hint: (.2, .7)
-                                #         # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                #         halign: "center"
-                                #         # spacing: 25
-                                #         Label:
-                                #             text: "Analyzing houses under 15000"
-                                #             font_size: 15
-                                #             color: 'green'
-                                #             size_hint:(.9,.05)
-                                #             pos_hint: {"center_x": 0.5, "center_y": 0.1}
-                                #         Label:
-                                #             text: "What we did"
-                                #             font_size: 13
-                                #             color: 'green'
-                                #             size_hint:(.9,.3)
-                                #             pos_hint: {"center_x": 0.2, "center_y": 0.99}
-                                #         Button:
-                                #             text: "View"
-                                #             size_hint:(.2,.05)
-                                #             pos_hint: {"center_x": 0.5, "center_y": 0.80}
-                                #             on_press: 
-                                #                 print("view chart")
-                                #                 root.on_click22()
-                                #             on_release: 
-                                #                 root.manager.transition.direction = "left"
-                                # MDBoxLayout: #Top Right Result
-                                #     orientation:'horizontal'
-                                #     id: result
-                                #     # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                #     size_hint: (.4, .7)
-                                #     # pos_hint: {"center_x": 0.1, "center_y": 0.54}
-                                #     halign: "center"
-                                #     # spacing: 25
-                                #     MDBoxLayout:
-                                #         id:room
-                                #         # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                #         # size_hint:(.30, .60)
-                                #         text: "room"
-                                #         # pos_hint: {"center_x": 0.1, "center_y": 0.50}
-                                #         MDCard:
-                                #             MDCarousel:
-                                #                 id: pic
-                                #                 # size_hint:(1,1)
-                                #                 direction: 'left'
-                                #                 AsyncImage:
-                                #                     source: 'house.jpg'
-                                #                     # AsyncImage:
-                                #                     #     source: 'bg.png'
-                            
-                            
-                            
-                            
-
-                            
-                            
-                            
-                            
+                           
