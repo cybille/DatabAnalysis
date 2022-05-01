@@ -69,10 +69,16 @@ class codeSource(Screen):
     global i
     global pict
     def pic(self):
-        pict= 'price/housesunder50instates.png'
+        pict= 'code\code 1.png'
         return pict
     def pic2(self):
-        pict= 'price/state.png'
+        pict= 'code\code 2.png'
+        return pict    
+    def pic3(self):
+        pict= 'code\code 3.png'
+        return pict
+    def pic4(self):
+        pict= 'code\code 4.png'
         return pict    
         
     def on_click(self):
@@ -94,6 +100,7 @@ class view(Screen):
         return pict   
     def on_click(self):
         i=0
+        
         AllScreens.switchPageTo('homeScreen')
     pass
 
