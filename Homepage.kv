@@ -118,6 +118,7 @@ MDScreen:
                             height: self.minimum_height
                             # row_default_height: 200
                             # row_force_default: True 
+                            # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
                                 orientation:'horizontal'
                                 id: result
@@ -187,6 +188,7 @@ MDScreen:
                                                 id: chart
                                                 source: root.pic3()
                                                 allow_stretch: True
+                            # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
                                 orientation:'vertical'
                                 id: result
@@ -236,9 +238,16 @@ MDScreen:
                                             # size_hint:(1,1)
                                             direction: 'left'
                                             AsyncImage:
-                                                source: root.pic()
+                                                id: chart
+                                                source: root.pic4()
+                                                allow_stretch: True
+                                            AsyncImage:
+                                                id: chart
+                                                source: root.pic5()
+                                                allow_stretch: True
                                                 # AsyncImage:
                                                 #     source: 'bg.png'
+                            # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
                                 orientation:'vertical'
                                 id: result
@@ -302,6 +311,7 @@ MDScreen:
                                                 allow_stretch: True
                                                 # AsyncImage:
                                                 #     source: 'bg.png'
+                            # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
                                 orientation:'vertical'
                                 id: result
@@ -355,7 +365,7 @@ MDScreen:
                                                 source: root.pic()
                                                 # AsyncImage:
                                                 #     source: 'bg.png'
-
+                            # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             MDBoxLayout: #Top Left Result
 
                                 orientation:'horizontal'
@@ -406,18 +416,12 @@ MDScreen:
                                 # spacing: 25
                                 MDBoxLayout:
                                     id:room
-                                    # md_bg_color: [219/255, 219/255, 219/255, 1]
-                                    # size_hint:(.30, .60)
+                                    
                                     text: "room"
-                                    # pos_hint: {"ceter_x": 0.1, "center_y": 0.50}
-                             # color: "Gray"
+                                    
+                            
                                     MDCard:
-                                        # Image:
-                                        #     source: "house.jpg"
-                                        #     allow_stretch: True
-                                        # Image:
-                                        #     source: "house.jpg"
-                                        #     allow_stretch: True
+                                      
                                         MDCarousel:
                                             id: pic
                                             # size_hint:(1,1)

@@ -103,12 +103,12 @@ class view2(Screen):
     def pic(self):
         pict= 'chartp.jpg'
         return pict 
-    def pic2(self):
-        pict= 'chartp.jpg'
+    def pic4(self):
+        pict= 'one bed/House W One Bedroom in NY.png'
+        return pict   
+    def pic5(self):
+        pict= 'one bed/Price of Houses in NY with One Bedroom and SqFt Below 800.png'
         return pict 
-    def pic3(self):
-        pict= 'chartp.jpg'
-        return pict  
     def on_click(self):
         i=0
         AllScreens.switchPageTo('homeScreen')
@@ -120,9 +120,9 @@ class view3(Screen):
     def pic(self):
         pict= 'chartp.jpg'
         return pict 
-    def pic2(self):
-        pict= 'chartp.jpg'
-        return pict
+    def pic8(self):
+        pict= 'pets\House in NY that allow cats and dogs.png'
+        return pict 
     def pic3(self):
         pict= 'chartp.jpg'
         return pict          
@@ -216,10 +216,10 @@ class homepage(Screen):
         return pict  
 
     def pic4(self):
-        pict= 'price/state.png'
+        pict= 'one bed/House W One Bedroom in NY.png'
         return pict   
     def pic5(self):
-        pict= 'price/state.png'
+        pict= 'one bed/Price of Houses in NY with One Bedroom and SqFt Below 800.png'
         return pict 
     def pic6(self):
         pict= 'price/state.png'
@@ -229,7 +229,7 @@ class homepage(Screen):
         pict= 'price/state.png'
         return pict 
     def pic8(self):
-        pict= 'price/state.png'
+        pict= 'pets\House in NY that allow cats and dogs.png'
         return pict 
     def pic9(self):
         pict= 'price/state.png'
