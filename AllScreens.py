@@ -120,12 +120,15 @@ class view3(Screen):
     def pic(self):
         pict= 'chartp.jpg'
         return pict 
+    def pic7(self):
+        pict= 'pets\Houses in NY without pets.png'
+        return pict
     def pic8(self):
         pict= 'pets\House in NY that allow cats and dogs.png'
         return pict 
-    def pic3(self):
-        pict= 'chartp.jpg'
-        return pict          
+    def pic9(self):
+        pict= 'pets\House below 50000 that allow cats and dogs.png'
+        return pict        
         
         
     def on_click(self):
@@ -155,15 +158,15 @@ class view5(Screen):
     global i
     global pict
     def pic(self):
-        pict= 'chartp.jpg'
+        pict= 'accessibility\wheel.jpg'
         return pict    
 
     def pic2(self):
-        pict= 'chartp.jpg'
+        pict= 'accessibility\wheel.jpg'
         return pict    
     
     def pic3(self):
-        pict= 'chartp.jpg'
+        pict= 'accessibility\wheel.jpg'
         return pict  
         
     def on_click(self):
@@ -226,13 +229,13 @@ class homepage(Screen):
         return pict
 
     def pic7(self):
-        pict= 'price/state.png'
+        pict= 'pets\Houses in NY without pets.png'
         return pict 
     def pic8(self):
         pict= 'pets\House in NY that allow cats and dogs.png'
         return pict 
     def pic9(self):
-        pict= 'price/state.png'
+        pict= 'pets\House below 50000 that allow cats and dogs.png'
         return pict   
     
     def pic10(self):
