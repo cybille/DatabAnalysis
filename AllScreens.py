@@ -6,6 +6,7 @@ from kivy.uix.screenmanager import Screen
 from AllButtons import repeated_buttons
 from kivy.lang.builder import Builder
 from kivy.uix.widget import Widget
+from AllText import text
 
 
 
@@ -243,4 +244,28 @@ class homepage(Screen):
     def pic12(self):
         pict= 'price/state.png'
         return pict 
+
+
+# Text-----------------
+    def title1(self):
+        return text.Topic1(self)
+    def title2(self):
+        return text.Topic2(self)
+    def title3(self):
+        return text.Topic3(self)
+    def title4(self):
+        return text.Topic4(self)
+    def title5(self):
+        return text.Topic5(self)
+
+    def detail1(self):
+        return text.Topic1D(self)
+    def detail2(self):
+        return text.Topic2D(self)
+    def detail3(self):
+        return text.Topic3D(self)
+    def detail4(self):
+        return text.Topic4D(self)
+    def detail5(self):
+        return text.Topic5D(self)
     pass
